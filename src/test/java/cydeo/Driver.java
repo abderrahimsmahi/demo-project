@@ -35,8 +35,8 @@ public class Driver {
                 case "remote-chrome":
                     try {
                         // assign your grid server address
-                        String gridAddress = "52.90.101.317";
-                        //String gridAddress = "54.227.60.27";
+                        //String gridAddress = "52.90.101.317";
+                        String gridAddress = "3.82.165.108";
                         URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
                         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                         desiredCapabilities.setBrowserName("chrome");
@@ -46,19 +46,19 @@ public class Driver {
                     }
                     break;
 
-//                case "remote-firefox":
-//
-//                    try {
-//                        // assign your grid server address
-//                        String gridAddress = "52.90.101.317";
-//                        URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
-//                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-//                        desiredCapabilities.setBrowserName("firefox");
-//                        driver = new RemoteWebDriver(url, desiredCapabilities);
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                    }
-//                    break;
+                case "remote-firefox":
+
+                    try {
+                        // assign your grid server address
+                        String gridAddress = "52.90.101.317";
+                        URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
+                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                        desiredCapabilities.setBrowserName("firefox");
+                        driver = new RemoteWebDriver(url, desiredCapabilities);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
